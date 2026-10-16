@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -16,25 +16,33 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('tf-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="nav" id="nav">
-  <a class="mark" href="#top" aria-label="Timeless Fragrance home"><span>Timeless</span><small>Fragrance</small></a>
+  <a class="brand" href="#top" aria-label="Timeless Fragrance home"><span class="logo" role="img" aria-label="Timeless Fragrance"></span></a>
   <nav aria-label="Main">
     <a href="#collection">Collection</a>
-    <a href="#gifting">Gifting</a>
+    <a href="#vibes">Vibes</a>
+    <a href="#packaging">Packaging</a>
     <a href="#order">How to order</a>
   </nav>
-  <a class="btn btn-sm" data-wa="hello" href="#"><span>WhatsApp</span><i class="arr" aria-hidden="true"></i></a>
+  <div class="nav-end">
+    <button class="theme" id="theme" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+      <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.400-1.400"/></svg>
+    </button>
+    <a class="btn btn-sm" data-wa="hello" href="#"><span>WhatsApp</span><i class="arr" aria-hidden="true"></i></a>
+  </div>
 </header>
 
 <main id="top">
+
   <section class="hero">
     <div class="hero-copy">
-      <svg class="flourish reveal" viewBox="0 0 220 40" aria-hidden="true"><path d="M4 28c26 0 38-16 58-16 12 0 16 8 8 12-7 3-14-3-8-9M216 28c-26 0-38-16-58-16-12 0-16 8-8 12 7 3 14-3 8-9M80 22c16 6 44 6 60 0" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="110" cy="9" r="2.6" fill="currentColor"/></svg>
-      <h1 class="reveal"><span class="h1a">Timeless</span><span class="h1b">Fragrance</span></h1>
+      <h1 class="reveal"><span class="logo logo-xl" role="img" aria-label="Timeless Fragrance"></span></h1>
       <p class="tag reveal">Every vibe. Every scent.</p>
       <p class="lede reveal">Perfumes, body sprays, diffusers and perfume oils. Find yours and make it timeless.</p>
       <div class="cta reveal">
@@ -42,9 +50,9 @@
         <a class="link" data-wa="hello" href="#">Order on WhatsApp</a>
       </div>
     </div>
-    <div class="hero-art" aria-hidden="false">
-      <div class="shell shell-main reveal"><div class="core"><img src="images/packaging.jpg" alt="Timeless Fragrance lavender gift bag"></div></div>
-      <div class="shell shell-tall reveal"><div class="core"><img src="images/stack.jpg" alt="Stack of Timeless Fragrance bags"></div></div>
+    <div class="hero-art">
+      <div class="shell shell-main reveal"><div class="core"><img src="images/bag-wide.jpg" alt="Timeless Fragrance lavender gift bag"></div></div>
+      <div class="shell shell-tall reveal"><div class="core"><img src="images/hero.jpg" alt="Stack of Timeless Fragrance bags"></div></div>
       <div class="seal reveal" aria-hidden="true"><span>Every<br>vibe</span></div>
     </div>
   </section>
@@ -62,34 +70,85 @@
       </div>
       <div class="filters reveal">
         <div class="tabs" id="tabs" role="tablist" aria-label="Category"></div>
-        <div class="chips" id="chips" aria-label="Vibe"></div>
+        <div class="tools">
+          <div class="chips" id="chips" aria-label="Vibe"></div>
+          <label class="search"><span class="sr">Search scents</span><input id="q" type="search" placeholder="Search scents or notes" autocomplete="off"></label>
+        </div>
       </div>
       <div class="grid" id="grid" aria-live="polite"></div>
-      <p class="empty" id="empty" hidden>Nothing here yet. Message us to see what's new.</p>
+      <p class="empty" id="empty" hidden>Nothing matches that. <a class="link" data-wa="request" href="#">Ask us on WhatsApp</a></p>
+      <p class="more reveal">Can't see yours? <a class="link" data-wa="request" href="#">Request a scent</a></p>
     </div>
   </section>
 
-  <section class="gifting" id="gifting">
-    <div class="wrap gift-grid">
-      <div class="gift-art">
-        <div class="shell reveal"><div class="core"><img src="images/packaging.jpg" alt="Timeless Fragrance lavender gift bag" loading="lazy"></div></div>
+  <section class="vibes alt" id="vibes">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <p class="eyebrow">Every vibe</p>
+        <h2>What's your vibe?</h2>
+        <p class="sub">Tell us how you want to smell and we'll point you to your scent.</p>
       </div>
-      <div class="gift-copy reveal">
-        <p class="eyebrow">Made to be gifted</p>
+      <div class="vibe-grid" id="vibeGrid"></div>
+    </div>
+  </section>
+
+  <section class="packaging" id="packaging">
+    <div class="wrap pack-grid">
+      <div class="pack-art">
+        <figure class="shell big reveal"><div class="core"><img src="images/bag-close.jpg" alt="Timeless Fragrance lavender packaging bag" loading="lazy"></div></figure>
+        <figure class="shell small reveal"><div class="core"><img src="images/bag-qr.jpg" alt="Packaging bag with QR code on the side" loading="lazy"></div></figure>
+      </div>
+      <div class="pack-copy reveal">
+        <p class="eyebrow">Our new packaging</p>
         <h2>Packed like it matters.</h2>
-        <p>Every order leaves in a lavender Timeless bag, ready to hand over. Birthdays, thank-yous or just because.</p>
+        <p>Every order leaves in a lavender Timeless bag, ready to hand over.</p>
+        <ul class="ticks">
+          <li>A lavender Timeless bag with every order</li>
+          <li>QR code on the side that takes people straight to us</li>
+          <li>Ready to gift for birthdays, thank-yous and just because</li>
+        </ul>
         <a class="btn" data-wa="gift" href="#"><span>Ask about gifting</span><i class="arr" aria-hidden="true"></i></a>
       </div>
     </div>
   </section>
 
-  <section class="order" id="order">
+  <section class="game alt" id="game">
+    <div class="wrap game-grid">
+      <figure class="shell reveal"><div class="core"><img src="images/note.jpg" alt="Note: if your partner's name starts with any of these letters, they owe you a perfume" loading="lazy"></div></figure>
+      <div class="game-copy reveal">
+        <p class="eyebrow">Play along</p>
+        <h2>They owe you a perfume.</h2>
+        <p>If your partner's name starts with any of these letters, they owe you a perfume. Tap yours and tell them.</p>
+        <div class="letters" id="letters" role="group" aria-label="Partner's first letter"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="wrap story-grid">
+      <div class="reveal">
+        <p class="eyebrow">Meet the vendor</p>
+        <h2>Hi, I'm MO.</h2>
+      </div>
+      <div class="story-copy reveal">
+        <p class="quote">I'm a perfume vendor who likes to pack orders. And you?</p>
+        <p>Timeless Fragrance is built on one idea: there's a scent for every vibe, and yours should feel timeless. Tell us what you love and we'll find it.</p>
+        <div class="cta">
+          <a class="btn" data-wa="vibe" href="#"><span>Tell us your vibe</span><i class="arr" aria-hidden="true"></i></a>
+          <a class="link" id="tt1" href="#" target="_blank" rel="noopener">See us on TikTok</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="order alt" id="order">
     <div class="wrap">
       <div class="sec-head reveal">
         <div>
           <p class="eyebrow">How to order</p>
           <h2>Three taps. No stress.</h2>
         </div>
+        <p class="sub">No checkout and no account. Just chat.</p>
       </div>
       <ol class="steps">
         <li class="reveal"><b>01</b><h3>Choose</h3><p>Browse the collection and pick your size.</p></li>
@@ -99,11 +158,27 @@
     </div>
   </section>
 
+  <section class="faq" id="faq">
+    <div class="wrap faq-grid">
+      <div class="reveal">
+        <p class="eyebrow">Questions</p>
+        <h2>Good to know</h2>
+      </div>
+      <div class="qa reveal">
+        <details><summary>How do I order?</summary><p>Tap Order on any scent. WhatsApp opens with the product and size filled in, and we take it from there.</p></details>
+        <details><summary>Can I order more than one scent?</summary><p>Yes. Message us the scents and sizes you want and we'll put your order together.</p></details>
+        <details><summary>Do you do gifts and bulk orders?</summary><p>We do. Message us what you need and we'll sort the packaging and quantities with you.</p></details>
+        <details><summary>I can't find the scent I want</summary><p>Request it on WhatsApp. Tell us the vibe or the notes you like and we'll suggest something.</p></details>
+        <details><summary>What do you sell?</summary><p>Perfumes, body sprays, diffusers, perfume oils and more.</p></details>
+      </div>
+    </div>
+  </section>
+
   <section class="final">
     <div class="wrap">
       <div class="panel reveal">
-        <h2>Make it <em>timeless.</em></h2>
-        <p>Questions, custom orders or bulk? Say hi.</p>
+        <span class="logo logo-l" role="img" aria-label="Timeless Fragrance"></span>
+        <h2>Find yours and make it <em>timeless.</em></h2>
         <div class="cta">
           <a class="btn" data-wa="hello" href="#"><span>Chat on WhatsApp</span><i class="arr" aria-hidden="true"></i></a>
           <a class="link" id="tt" href="#" target="_blank" rel="noopener">Follow on TikTok</a>
@@ -115,13 +190,13 @@
 
 <footer>
   <div class="wrap foot">
-    <a class="mark" href="#top"><span>Timeless</span><small>Fragrance</small></a>
-    <p>Every Vibe. Every Scent.</p>
+    <span class="logo logo-s" role="img" aria-label="Timeless Fragrance"></span>
+    <p>Perfumes · Body sprays · Diffusers · Perfume oils &amp; more</p>
     <p class="fine">@<span id="handle"></span> on TikTok · <span id="phone"></span></p>
   </div>
 </footer>
 
-<a class="wa-bar" data-wa="hello" href="#" aria-label="Order on WhatsApp">Order on WhatsApp<i class="arr" aria-hidden="true"></i></a>
+<a class="wa-bar" data-wa="hello" href="#" aria-label="Order on WhatsApp"><span>Order on WhatsApp</span><i class="arr" aria-hidden="true"></i></a>
 
 <script src="catalog.js"></script>
 <script src="script.js"></script>

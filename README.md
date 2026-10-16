@@ -2,16 +2,18 @@
 
 A one-page storefront for **Timeless Fragrance** ([@_timelessfragrance](https://www.tiktok.com/@_timelessfragrance) on TikTok): perfumes, body sprays, diffusers and perfume oils, with every product ordering straight through WhatsApp.
 
-Live: https://timeless-fragrance.vercel.app
+Live: https://timeless-fragrance-zeta.vercel.app
 
-![Desktop](screenshots/desktop-hero.png)
+![Light](screenshots/light-desktop-hero.png)
+![Dark](screenshots/dark-desktop-hero.png)
 
 ## What it is
 
 - Plain static HTML, CSS and JavaScript. No build step.
-- Brand palette taken from the lavender packaging: midnight indigo, lilac and orchid.
-- Catalog with category tabs, vibe filter, size picker and a pre-filled WhatsApp message per product.
-- Mobile-first, with a sticky "Order on WhatsApp" bar.
+- Her real logo, lavender packaging photos and brand palette (midnight indigo, lilac, orchid). Cinzel and Montserrat for type.
+- **Light and dark mode**: lavender-white by default, deep purple in dark. The toggle in the nav remembers the choice.
+- Sections: hero, categories, searchable collection (tabs, vibe filter, size picker), vibes, packaging, the "they owe you a perfume" letter game, meet MO, how to order, FAQ and a closing call to action.
+- Every order button opens WhatsApp with a pre-filled message. Mobile gets a sticky "Order on WhatsApp" bar.
 
 ## Editing the catalog
 
@@ -21,12 +23,12 @@ Product photos: save `images/products/<product-id>.jpg` (4:5 works best). Until 
 
 ## Replacing placeholder images
 
-Hero, gifting and social images are stills from the brand's videos. Upscale any file in `source-frames/` and save it over the matching name in `images/` (`hero.jpg`, `packaging.jpg`, `stack.jpg`) and the site picks it up. `tools/build_images.py` regenerates the placeholders.
+The photos are stills from the brand's videos. Upscale any file in `source-frames/` and save it over the matching name in `images/` (`hero.jpg`, `bag-wide.jpg`, `bag-close.jpg`, `bag-qr.jpg`, `note.jpg`) and the site picks it up. `tools/build_images.py` regenerates the placeholders.
 
 ## Tools
 
-`tools/` holds the helper scripts (Python + Playwright with Edge): `build_images.py`, `render.py` (social image and touch icon) and `shoot.py` (screenshots).
+`tools/` holds the helper scripts (Python + Playwright with Edge): `build_images.py`, `render.py` (social image and touch icon) and `shoot.py` (screenshots; serve the folder on port 8123 first).
 
 ## Run locally
 
-Open `index.html`, or serve the folder with any static server.
+Serve the folder with any static server, for example `python -m http.server 8123`. The logo uses CSS masks, so opening `index.html` straight from disk won't render it.
