@@ -2,7 +2,7 @@
 
 A one-page storefront for **Timeless Fragrance** ([@_timelessfragrance](https://www.tiktok.com/@_timelessfragrance) on TikTok): perfumes, body sprays, diffusers and perfume oils, with every product ordering straight through WhatsApp.
 
-Live: https://timeless-fragrance-zeta.vercel.app
+Live: https://timelessfragrance.vercel.app
 
 ![Light](screenshots/light-desktop-hero.png)
 ![Dark](screenshots/dark-desktop-hero.png)
@@ -23,7 +23,7 @@ Product photos: save `images/products/<product-id>.jpg` (4:5 works best). Until 
 
 ## Replacing placeholder images
 
-The photos are stills from the brand's videos. Upscale any file in `source-frames/` and save it over the matching name in `images/` (`hero.jpg`, `bag-wide.jpg`, `bag-close.jpg`, `bag-qr.jpg`, `note.jpg`) and the site picks it up. `tools/build_images.py` regenerates the placeholders.
+The photos in `images/` (`hero.jpg`, `bag-wide.jpg`, `bag-close.jpg`, `bag-qr.jpg`, `note.jpg`) are upscaled stills from the brand's videos; the originals are in `source-frames/`. Save a better file over the same name and the site picks it up. `tools/build_images.py --force` rebuilds the low-res placeholders.
 
 ## Tools
 
